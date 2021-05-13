@@ -20,4 +20,10 @@ class MesadaTest {
 		Mesada m2 = new Mesada(2,4);
 		assertTrue(m1.puedeApilar(m2));
 	}
+	@Test
+	void testPuedeApilarRotando() {
+		Mesada m1 = new Mesada(10,1);
+		Mesada m2 = new Mesada(1,10);
+		assertTrue(m1.puedeApilar(m2));
+	}
 }
