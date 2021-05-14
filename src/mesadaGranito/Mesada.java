@@ -13,11 +13,11 @@ public class Mesada {
 	}
 
 	public boolean puedeApilar(Mesada other) {
-		if(this.lado1 < other.lado1)
-			return false;
-		if(this.lado2 < other.lado2)
-			return false;
-		return true;
+		if(this.lado1 >= other.lado1 && this.lado2 >= other.lado2)
+			return true;
+		if(this.lado1 >= other.lado2 && this.lado2 >= other.lado1)
+			return true;
+		return false;
 	}
 	
 	public boolean esApilable(List<Mesada> lista) {
