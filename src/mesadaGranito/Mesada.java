@@ -13,29 +13,21 @@ public class Mesada {
 	}
 
 	public boolean puedeApilar(Mesada other) {
-		if(this.lado1 >= other.lado1 && this.lado2 >= other.lado2)
+		if (this.lado1 >= other.lado1 && this.lado2 >= other.lado2)
 			return true;
-		if(this.lado1 >= other.lado2 && this.lado2 >= other.lado1)
+		if (this.lado1 >= other.lado2 && this.lado2 >= other.lado1)
 			return true;
 		return false;
 	}
-	
+
 	public boolean esApilable(List<Mesada> lista) {
-		for(Mesada mesada : lista) {
-			if((this.lado1 < mesada.lado1 && this.lado2 < mesada.lado2)
+		for (Mesada mesada : lista) {
+			if ((this.lado1 < mesada.lado1 && this.lado2 < mesada.lado2)
 					|| (this.lado2 < mesada.lado1 && this.lado1 < mesada.lado2)) {
 				return true;
 			}
 		}
 		return false;
-	}
-
-	public int getLado1() {
-		return lado1;
-	}
-
-	public int getLado2() {
-		return lado2;
 	}
 
 }

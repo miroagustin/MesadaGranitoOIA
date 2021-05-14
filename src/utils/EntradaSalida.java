@@ -10,10 +10,10 @@ import mesadaGranito.Mesada;
 
 public class EntradaSalida {
 
-	public static List<Mesada> getListaMesadas() throws FileNotFoundException {
-		Scanner sc = new Scanner(new File("mesadas.in"));
+	public static List<Mesada> getListaMesadas(String path) throws FileNotFoundException {
+		Scanner sc = new Scanner(new File(path));
 		int tamaño = sc.nextInt();
-		List<Mesada> lista = new ArrayList<>(tamaño);
+		List<Mesada> lista = new ArrayList<Mesada>(tamaño);
 		for (int i = 0; i < tamaño; i++)
 			lista.add(new Mesada(sc.nextInt(), sc.nextInt()));
 		return lista;
