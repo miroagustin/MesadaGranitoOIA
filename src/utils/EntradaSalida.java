@@ -2,21 +2,20 @@ package utils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
+import mesadaGranito.ApiladorMesadas;
 import mesadaGranito.Mesada;
 
 public class EntradaSalida {
 
-	public static List<Mesada> getListaMesadas(String path) throws FileNotFoundException {
+	public static ApiladorMesadas escribir(String path) throws FileNotFoundException {
 		Scanner sc = new Scanner(new File(path));
 		int tamaño = sc.nextInt();
-		List<Mesada> lista = new ArrayList<Mesada>(tamaño);
+		ApiladorMesadas apilador = new ApiladorMesadas();
 		for (int i = 0; i < tamaño; i++)
-			lista.add(new Mesada(sc.nextInt(), sc.nextInt()));
-		return lista;
+			apilador.agregar(new Mesada(sc.nextInt(), sc.nextInt()));
+		return apilador;
 	}
 
 }

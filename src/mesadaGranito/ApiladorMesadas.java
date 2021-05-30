@@ -1,18 +1,24 @@
 package mesadaGranito;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class ApiladorMesadas {
 
 	private int cantidadPilas;
+	private List<Mesada> mesadas = new LinkedList<Mesada>();
 
-	public ApiladorMesadas(List<Mesada> listaMesadas) {
-		for (Mesada mesada : listaMesadas)
-			if (!mesada.esApilable(listaMesadas))
+	public void agregar(Mesada mesada) {
+		mesadas.add(mesada);
+	}
+
+	public void resolver() {
+		for (Mesada mesada : mesadas)
+			if (!mesada.esApilable(mesadas))
 				this.cantidadPilas++;
 	}
 
-	public Integer getCantPilas() {
+	public Integer getResultado() {
 		return this.cantidadPilas;
 	}
 
